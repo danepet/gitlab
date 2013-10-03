@@ -1,11 +1,5 @@
 package ca.ubc.cpsc310.gitlab.client;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ca.ubc.cpsc310.gitlab.client.products.ProductItem;
-import ca.ubc.cpsc310.gitlab.client.user.IUser;
-import ca.ubc.cpsc310.gitlab.client.user.User;
 import ca.ubc.cpsc310.gitlab.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -45,7 +39,21 @@ public class GitLab implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 	
+	{
+		
+		service.getUsers(new AsyncCallback<List<IUser>>(){
 
+			@Override
+			public void onFailure(Throwable caught) {
+					Window.alert("Error occured " + caught.getClass() + " : " + caught.getMessage());
+				
+			}
+
+			@Override
+			public void onSuccess(List<IUser> result) {
+				Window.alert("Got list back with " +  result.size() + " entries");
+				
+			}});
 		
 	}
 	
