@@ -13,7 +13,9 @@ public class User implements IUser {
 	private List<ProductItem> shoppingCart = new ArrayList<ProductItem>();
 	private List<ProductItem> wishList = new ArrayList<ProductItem>();
 
-	private String name;
+	
+	private String name1;
+	private String name2;
 	private String language;
 
 
@@ -29,7 +31,7 @@ public class User implements IUser {
 
 	@Override
 	public String getName() {
-		return name;
+		return name1;
 	}
 
 	@Override
@@ -50,7 +52,7 @@ public class User implements IUser {
 
 	@Override
 	public void setName(String name) {
-		this.name = name;
+		this.name1 = name;
 
 	}
 
