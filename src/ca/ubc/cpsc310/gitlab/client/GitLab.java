@@ -6,6 +6,7 @@ import ca.ubc.cpsc310.gitlab.client.service.LoadUsersService;
 import ca.ubc.cpsc310.gitlab.client.service.LoadUsersServiceAsync;
 import ca.ubc.cpsc310.gitlab.client.user.IUser;
 import ca.ubc.cpsc310.gitlab.shared.FieldVerifier;
+import ca.ubc.cpsc310.gitlab.client.*;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -49,7 +50,7 @@ public class GitLab implements EntryPoint {
 	public void onModuleLoad() {
 	
 	{
-		
+		// very important 
 		service.getUsers(new AsyncCallback<List<IUser>>(){
 
 			@Override
@@ -61,6 +62,7 @@ public class GitLab implements EntryPoint {
 			@Override
 			public void onSuccess(List<IUser> result) {
 				Window.alert("Got list back with " +  result.size() + " entries");
+				System.out.print(true);
 				
 			}});
 		
