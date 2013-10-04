@@ -15,7 +15,6 @@ public class User implements IUser {
 
 	
 	private String name1;
-	private String name2;
 	private String language;
 
 
