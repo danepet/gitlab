@@ -1,6 +1,12 @@
 package ca.ubc.cpsc310.gitlab.client;
 
+import java.util.List;
+
+import ca.ubc.cpsc310.gitlab.client.service.LoadUsersService;
+import ca.ubc.cpsc310.gitlab.client.service.LoadUsersServiceAsync;
+import ca.ubc.cpsc310.gitlab.client.user.IUser;
 import ca.ubc.cpsc310.gitlab.shared.FieldVerifier;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -32,7 +38,10 @@ public class GitLab implements EntryPoint {
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again.";
 
+	final LoadUsersServiceAsync service = GWT.create(LoadUsersService.class);
+	
 	private final FlexTable flexTable = new FlexTable();
+	
 
 	/**
 	 * This is the entry point method.
@@ -55,6 +64,7 @@ public class GitLab implements EntryPoint {
 				
 			}});
 		
+	}
 	}
 	
 	/**
